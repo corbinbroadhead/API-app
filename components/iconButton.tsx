@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type Props = {
   text: string;
@@ -11,7 +11,7 @@ export default function IconButton({ text, onClick, icon }: Props) {
   const colors = {"accent": "#d0d0d0", "text": "black", "background": "white"}
   
   return (
-    <TouchableOpacity
+    <Pressable
       onPress={onClick}
       style={[
         styles.button,
@@ -24,7 +24,7 @@ export default function IconButton({ text, onClick, icon }: Props) {
           {text}
         </Text>
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 }
 

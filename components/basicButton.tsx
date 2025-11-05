@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity } from "react-native";
+import { Pressable, Text } from "react-native";
 
 type Props = {
   text: string;
@@ -9,7 +9,7 @@ export default function BasicButton({ text, onClick }: Props) {
   const colors = {"accent": "#d0d0d0", "text": "black", "background": "white"}
 
   return (
-    <TouchableOpacity
+    <Pressable
       onPress={onClick}
       style={{
         backgroundColor: colors.accent,
@@ -24,6 +24,6 @@ export default function BasicButton({ text, onClick }: Props) {
       }}
     >
       <Text style={{ color: colors.text, fontWeight: "bold", fontSize: 16 }}>{text}</Text>
-    </TouchableOpacity>
+    </Pressable>
   );
 }

@@ -1,5 +1,5 @@
 import Entypo from '@expo/vector-icons/Entypo';
-import { Text, TouchableOpacity } from "react-native";
+import { Pressable, Text } from "react-native";
 
 type Props = {
   text: string;
@@ -11,7 +11,7 @@ export default function CustomListItem({ text, onClick, clickable = true }: Prop
   const colors = { accent: "#d0d0d0", text: "black", background: "white" };
 
   return (
-    <TouchableOpacity
+    <Pressable
       disabled={!clickable}
       onPress={clickable ? onClick : undefined}
       style={{
@@ -30,6 +30,6 @@ export default function CustomListItem({ text, onClick, clickable = true }: Prop
         {text}
       </Text>
       {clickable && <Entypo name="chevron-right" size={24} color={colors.text} />}
-    </TouchableOpacity>
+    </Pressable>
   );
 }
